@@ -1,0 +1,65 @@
+//CICLOS  Y LISTAS
+val nombres = listOf(
+    "Pedro Luis",
+    "Juan Manuel",
+    "Juan Luis",
+    "Maria Ines",
+    "Romero",
+    "Ernesto",
+    "Juan Pedro",
+    "Adrian",
+    "Mireya Maria",
+    "Ana Sofia",
+    "Jose Juan")
+
+val numeros = listOf("one","two","three","four","five")
+
+val list=mutableListOf(1,2,3,4)
+
+fun main() {
+    var x=20
+    var y=20
+
+    val nameCount = countName("Juan")
+    println("Tun nombre se encontro $nameCount veces")
+
+    //ciclo while
+    while (x>0){
+        println(x)
+        x--
+    }
+    //ciclo do{...}while
+    do{
+        y--
+        println(y)
+    }while (y>0)
+
+    //Imprimir arreglo
+    println(numeros)
+
+    println("Numero de elementos: ${numeros.size}")
+    println("Segundo elemento:${numeros.get(1)}")
+    println("Cuarto elemento: ${numeros[3]}")
+    println("Ultimo elemento: ${numeros.get(numeros.size-1)}")
+    println("Index del elemento \"four\": ${numeros.indexOf("four")}")
+
+    print(list)
+
+    //Agregar elementos
+    list.add(5)
+    //Remover elementos
+    list.removeAt(1)
+    //Modificar elementos
+    list[0]=0
+
+    println(list)
+}
+fun countName(name:String):Int{
+    var count=0
+    for(currentName in nombres){
+        if(name in currentName){
+            count++
+        }
+    }
+    return count
+}
